@@ -2,37 +2,79 @@
 <html lang="en">
 <head>
 
-  
-/* AWEN DIGITALS — DEMO NOTICE BEHAVIOUR */
 
-(() => {
-  const notice = document.getElementById("demoNotice");
-  const continueButton = document.getElementById("demoContinue");
+<!-- AWEN DIGITALS — CLIENT DEMO NOTICE -->
+<div class="demo-notice" id="demoNotice" role="dialog"
+     aria-modal="true" aria-labelledby="demoTitle">
 
-  if (!notice || !continueButton) return;
+  <div class="demo-notice__card">
 
-  continueButton.addEventListener("click", event => {
-    event.preventDefault();
+    <div class="demo-notice__brand">
+      <span class="demo-notice__mark">A</span>
+      <span>AWEN DIGITALS<span class="demo-notice__tm">™</span></span>
+    </div>
 
-    notice.style.display = "none";
-    document.body.style.overflow = "";
+    <div class="demo-notice__eyebrow">
+      A PERSONALISED WEBSITE PREVIEW
+    </div>
 
-    const contactSection = document.getElementById("demoContact");
+    <h2 id="demoTitle">
+      A new digital identity<br>
+      for <span>your business.</span>
+    </h2>
 
-    if (contactSection) {
-      contactSection.scrollIntoView({
-        behavior: window.matchMedia(
-          "(prefers-reduced-motion: reduce)"
-        ).matches ? "auto" : "smooth",
-        block: "start"
-      });
-    } else {
-      window.scrollTo({ top: 0, behavior: "auto" });
-    }
-  });
+    <p class="demo-notice__intro">
+      This website concept has been thoughtfully prepared
+      to demonstrate how your business could look and
+      connect with customers online.
+    </p>
 
-  document.body.style.overflow = "hidden";
-})();
+    <div class="demo-notice__divider"></div>
+
+    <div class="demo-notice__message">
+      <span class="demo-notice__icon">✦</span>
+      <div>
+        <h3>This is a preview, not the final handover.</h3>
+        <p>
+          The design you are about to explore is a
+          demonstration of our work. Finalisation,
+          customisation, official contact integration
+          and website delivery are subject to your
+          approval and the agreed project terms.
+        </p>
+      </div>
+    </div>
+
+    <div class="demo-notice__message">
+      <span class="demo-notice__icon">↗</span>
+      <div>
+        <h3>Like what you see?</h3>
+        <p>
+          Let's discuss your requirements, any changes
+          you need and the pricing before proceeding.
+          Your business deserves a website built around
+          your needs.
+        </p>
+      </div>
+    </div>
+
+    <a href="#demoContact" class="demo-notice__primary"
+       id="demoContinue">
+      Explore the website concept
+      <span aria-hidden="true">→</span>
+    </a>
+
+    <p class="demo-notice__footer">
+      Designed with purpose. Built around your business.
+      <br>
+      <strong>AWEN DIGITALS™</strong>
+      <br>
+      Affordable websites. Meaningful digital presence.
+    </p>
+
+  </div>
+</div>
+
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
