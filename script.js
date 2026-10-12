@@ -4,6 +4,38 @@
    Navigation, enquiries, WhatsApp and motion
    ========================================== */
 
+/* AWEN DIGITALS — DEMO NOTICE BEHAVIOUR */
+
+(() => {
+  const notice = document.getElementById("demoNotice");
+  const continueButton = document.getElementById("demoContinue");
+
+  if (!notice || !continueButton) return;
+
+  continueButton.addEventListener("click", event => {
+    event.preventDefault();
+
+    notice.style.display = "none";
+    document.body.style.overflow = "";
+
+    const contactSection = document.getElementById("demoContact");
+
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches ? "auto" : "smooth",
+        block: "start"
+      });
+    } else {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
+  });
+
+  document.body.style.overflow = "hidden";
+})();
+
+
 const TULSI_CONFIG = {
   // Confirm this number with the property owner.
   // Format: country code + number, digits only.
