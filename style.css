@@ -16,6 +16,230 @@
   --wrap: 1200px;
   color-scheme: light;
 }
+
+/* =========================================
+   AWEN DIGITALS — FULL-SCREEN DEMO NOTICE
+   ========================================= */
+
+.demo-notice {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow-y: auto;
+  background: rgba(19, 29, 24, 0.88);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.demo-notice__card {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  padding: clamp(26px, 5vw, 52px);
+  color: #263c31;
+  background: #f5f0e6;
+  border: 1px solid rgba(214, 185, 121, 0.7);
+  border-radius: 5px;
+  box-shadow: 0 25px 90px rgba(0, 0, 0, 0.3);
+  animation: demoNoticeEnter 0.45s ease both;
+}
+
+.demo-notice__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 35px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.demo-notice__mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  color: #f5f0e6;
+  background: #263c31;
+  border: 1px solid #d6b979;
+  font-family: Georgia, serif;
+  font-size: 24px;
+}
+
+.demo-notice__tm {
+  font-size: 9px;
+  vertical-align: super;
+}
+
+.demo-notice__eyebrow {
+  margin-bottom: 15px;
+  color: #9b6847;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  line-height: 1.8;
+}
+
+.demo-notice__card h2 {
+  margin: 0 0 20px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(34px, 7vw, 53px);
+  font-weight: 500;
+  letter-spacing: -1.3px;
+  line-height: 1.12;
+}
+
+.demo-notice__card h2 span {
+  color: #9b6847;
+  font-style: italic;
+}
+
+.demo-notice__intro {
+  max-width: 490px;
+  margin: 0;
+  color: #5b625a;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.demo-notice__divider {
+  width: 65px;
+  height: 2px;
+  margin: 27px 0;
+  background: #d6b979;
+}
+
+.demo-notice__message {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin: 23px 0;
+}
+
+.demo-notice__icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 35px;
+  width: 35px;
+  height: 35px;
+  color: #f5f0e6;
+  background: #263c31;
+  border-radius: 50%;
+  font-size: 17px;
+}
+
+.demo-notice__message h3 {
+  margin: 1px 0 7px;
+  color: #263c31;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.demo-notice__message p {
+  margin: 0;
+  color: #62665e;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.demo-notice__primary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: 100%;
+  margin-top: 30px;
+  padding: 17px 20px;
+  color: #fff;
+  background: #263c31;
+  border: 1px solid #263c31;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: background 0.2s ease,
+              color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.demo-notice__primary:hover {
+  color: #263c31;
+  background: #d6b979;
+  border-color: #d6b979;
+  transform: translateY(-2px);
+}
+
+.demo-notice__primary:focus-visible {
+  outline: 3px solid #9b6847;
+  outline-offset: 4px;
+}
+
+.demo-notice__footer {
+  margin: 23px 0 0;
+  color: #77786e;
+  font-size: 10px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.demo-notice__footer strong {
+  color: #263c31;
+  letter-spacing: 1.5px;
+}
+
+@keyframes demoNoticeEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-notice {
+    padding: 12px;
+    align-items: center;
+  }
+
+  .demo-notice__card {
+    max-height: calc(100dvh - 24px);
+    padding: 25px 21px;
+  }
+
+  .demo-notice__brand {
+    margin-bottom: 27px;
+  }
+
+  .demo-notice__intro {
+    font-size: 14px;
+  }
+
+  .demo-notice__message p {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-notice__card {
+    animation: none;
+  }
+
+  .demo-notice__primary {
+    transition: none;
+  }
+}
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 body { margin: 0; color: var(--ink); background: var(--ivory); font-family: var(--sans); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
